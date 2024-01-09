@@ -9,9 +9,12 @@ const OrderDetailContainer: React.FC<OrderDetailContainerType> = ({
 }) => (
   <StyledOrderDetailContainer>
     <div className="order-detail-title">Your bill</div>
-    <span id="count">Items ordered：{itemsOrdered}</span>
+    <span id="count">
+      Items ordered：<span data-testid="count">{itemsOrdered}</span>
+    </span>
     <span id="price">
-      Total Price： {totalPrice} {priceUnit}
+      Total Price： <span data-testid="price">{totalPrice}</span>{" "}
+      <span>{priceUnit}</span>
     </span>
   </StyledOrderDetailContainer>
 );

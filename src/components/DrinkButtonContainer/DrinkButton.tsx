@@ -9,10 +9,14 @@ const DrinkButton: React.FC<DrinkButtonType> = ({
   handleButtonClick,
   priceUnit,
 }) => (
-  <StyledDrinkButton id={name} onClick={handleButtonClick}>
+  <StyledDrinkButton id={name} onClick={handleButtonClick} data-testid={name}>
     <span className="drink-name">{name}</span>
     <span className="drink-price">{`${price} ${priceUnit}`}</span>
-    <div id={`${name}-count`} className="drink-count">
+    <div
+      id={`${name}-count`}
+      className="drink-count"
+      data-testid={`${name}-count`}
+    >
       {count}
     </div>
   </StyledDrinkButton>
