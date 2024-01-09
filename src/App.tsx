@@ -1,8 +1,5 @@
 import React from "react";
-// import logo from './logo.svg';
 import "./App.css";
-// import Loadable from 'react-loadable';
-// import PropTypes from "prop-types";
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./containers/Home";
@@ -14,7 +11,7 @@ const routeConfig = [
   },
 ];
 
-function App() {
+const App: React.FC = () => {
   return (
     <Routes>
       {routeConfig.map((route, index) => (
@@ -22,6 +19,6 @@ function App() {
       ))}
     </Routes>
   );
-}
+};
 
 export default App;

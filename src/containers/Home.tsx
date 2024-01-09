@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useCallback } from "react";
 
 import { DrinkType } from "../types";
 
@@ -13,12 +13,26 @@ const Home: React.FC = () => {
     { name: "coke", price: 190, count: 0 },
     { name: "beer", price: 580, count: 0 },
   ]);
+  const [priceUnit, setPriceUnit] = useState<string>("yen");
+
+  const handleDrinkButtonClick = useCallback(
+    (index: number) => {
+      const updatedDrinkList = [...drinkList];
+      updatedDrinkList[index].count += 1;
+      setDrinkList(updatedDrinkList);
+    },
+    [drinkList, setDrinkList]
+  );
 
   return (
-    <div>
-      <DrinkButtonContainer />
+    <Fragment>
+      <DrinkButtonContainer
+        drinkList={drinkList}
+        handleButtonClick={handleDrinkButtonClick}
+        priceUnit={priceUnit}
+      />
       <OrderDetailContainer />
-    </div>
+    </Fragment>
   );
 };
 
