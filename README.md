@@ -6,6 +6,16 @@
 | [react-router-dom]  | 6.21.1  | React router plugin      |
 | [styled-components] | 6.1.8   | CSS in JavaScript plugin |
 
+## Folder structure
+
+| Directory      | Description                                   |
+| -------------- | --------------------------------------------- |
+| src            | Source code                                   |
+| ├── components | React components                              |
+| ├── containers | Page components                               |
+| ├── tests      | Unit test for containers / components         |
+| ├── types      | Setup types for React containers / components |
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
