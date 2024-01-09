@@ -13,7 +13,7 @@ const Home: React.FC = () => {
     { name: "coke", price: 190, count: 0 },
     { name: "beer", price: 580, count: 0 },
   ]);
-  const [priceUnit, setPriceUnit] = useState<string>("yen");
+  const [priceUnit] = useState<string>("yen");
   const formattedNumber = (number: number) => number.toLocaleString("en-US");
 
   const itemsOrdered = useMemo(() => {
