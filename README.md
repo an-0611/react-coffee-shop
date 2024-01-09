@@ -1,3 +1,11 @@
+## Env
+
+| Name                | Version | Description              |
+| ------------------- | ------- | ------------------------ |
+| [Node.js]           | 16.19.1 | Node version             |
+| [react-router-dom]  | 6.21.1  | React router plugin      |
+| [styled-components] | 6.1.8   | CSS in JavaScript plugin |
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

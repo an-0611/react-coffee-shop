@@ -1,4 +1,4 @@
-import { Fragment, useState, useCallback } from "react";
+import { Fragment, useState, useMemo, useCallback } from "react";
 
 import { DrinkType } from "../types";
 
@@ -14,6 +14,19 @@ const Home: React.FC = () => {
     { name: "beer", price: 580, count: 0 },
   ]);
   const [priceUnit, setPriceUnit] = useState<string>("yen");
+  const formattedNumber = (number: number) => number.toLocaleString("en-US");
+
+  const itemsOrdered = useMemo(() => {
+    return formattedNumber(
+      drinkList.reduce((accu, cur) => accu + cur.count, 0)
+    );
+  }, [drinkList]);
+
+  const totalPrice = useMemo(() => {
+    return formattedNumber(
+      drinkList.reduce((accu, cur) => accu + cur.price * cur.count, 0)
+    );
+  }, [drinkList]);
 
   const handleDrinkButtonClick = useCallback(
     (index: number) => {
@@ -31,7 +44,11 @@ const Home: React.FC = () => {
         handleButtonClick={handleDrinkButtonClick}
         priceUnit={priceUnit}
       />
-      <OrderDetailContainer />
+      <OrderDetailContainer
+        itemsOrdered={itemsOrdered}
+        totalPrice={totalPrice}
+        priceUnit={priceUnit}
+      />
     </Fragment>
   );
 };

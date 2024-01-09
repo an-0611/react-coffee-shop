@@ -14,3 +14,9 @@ export interface DrinkButtonContainerType {
   handleButtonClick: (buttonIdx: number) => void;
   priceUnit: string;
 }
+
+export interface OrderDetailContainerType {
+  itemsOrdered: string;
+  totalPrice: string;
+  priceUnit: string;
+}
